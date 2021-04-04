@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Array_Traning
 {
@@ -182,14 +183,17 @@ namespace Array_Traning
             //        Console.Write($"{arr[i][j]}\n");
             //    }
             //}
-            
-            // ARRAY TEST
-            Array myArr = Array.CreateInstance(typeof(string), 5);
-            myArr.SetValue("Name", 0);
-            myArr.SetValue("Age", 1);
-            string s = (string)myArr.GetValue(1);
-            Console.WriteLine(s);
 
+            // ARRAY TEST
+            //Array myArr = Array.CreateInstance(typeof(string), 5);
+            //myArr.SetValue("Name", 0);
+            //myArr.SetValue("Age", 1);
+            //string s = (string)myArr.GetValue(1);
+            //Console.WriteLine(s);
+
+            int[] arr = { 1, 2, 3, 4, 3, 55, 23, 2, 5, 6, 2, 2 };
+            var tmp = arr.Where(x => x % 2 == 0).Sum();
+            Console.WriteLine(tmp);
         }
 
     }
