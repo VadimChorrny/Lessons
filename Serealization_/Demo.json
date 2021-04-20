@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ann",
+    "course": 1,
+    "exams": [
+      { "math": 12 },
+      { "english": 10 }
+    ]
+
+  },
+  {
+    "name": "Anton",
+    "course": 2,
+    "exams": 
+    [
+      { "math": 11 },
+      {"english": 12}
+    ]
+  }
+]

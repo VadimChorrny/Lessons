@@ -18,7 +18,7 @@ namespace FileStream_Demo
         }
         public static int ReedInt(string fname)
         {
-            using (FileStream fstream = new FileStream(fname, FileMode.Create))
+            using (FileStream fstream = new FileStream(fname, FileMode.Open))
             {
                 byte[] bytes = new byte[sizeof(int)];
                 fstream.Read(bytes);
@@ -35,7 +35,6 @@ namespace FileStream_Demo
                 fstream.WriteByte(len); // записали довжину байтового масиву(сконвертованого рядка)
                 fstream.Write(bytes);
             }
-
         }
         public static string ReedString(string fname)
         {
@@ -122,21 +121,21 @@ namespace FileStream_Demo
     {
         static void Main(string[] args)
         {
-            //Console.OutputEncoding = Encoding.UTF8;
-            //string fname = "demo.dat";
-            ////int value = 12345;
-            ////FS.WriteInt(value, fname);
-            ////Console.WriteLine($"Int is : {FS.ReedInt(fname)}");
-            //string text = "Hello! Привіт!";
-            //FS.WriteString(text, fname);
-            //Console.WriteLine($"---- {FS.ReedString(fname)}");
-            Student student = new Student() { Name = "Igor", Course = "Five" };
-            student.Marks.Add(12);
-            student.Marks.Add(11);
-            student.Marks.Add(10);
-            string fname = @"test.dat";
-            FS.WriteObject(new Student("Igor","Five"), fname);
-            Console.WriteLine($"Output {FS.ReedWithFile(fname)}");
+            Console.OutputEncoding = Encoding.UTF8;
+            string fname = "demo.dat";
+            //int value = 12345;
+            //FS.WriteInt(value, fname);
+            //Console.WriteLine($"Int is : {FS.ReedInt(fname)}");
+            string text = "Hello! Привіт!";
+            FS.WriteString(text, fname);
+            Console.WriteLine($"---- {FS.ReedString(fname)}");
+            //Student student = new Student() { Name = "Igor", Course = "Five" };
+            //student.Marks.Add(12);
+            //student.Marks.Add(11);
+            //student.Marks.Add(10);
+            //string fname = @"test.dat";
+            //FS.WriteObject(new Student("Igor","Five"), fname);
+            //Console.WriteLine($"Output {FS.ReedWithFile(fname)}");
         }
     }
 }

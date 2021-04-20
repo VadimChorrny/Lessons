@@ -90,8 +90,6 @@ namespace IDispose_Task
             Console.WriteLine("Dispose has been used!");
         }
 
-
-
         ~FileWorker()
         {
             Console.WriteLine($"Finallizer worked!");
